@@ -17,11 +17,16 @@ def homePage(request):
     }
     return render(request,"index.html",data)
 
-def aboutUs(request):
-    return HttpResponse("<h3>Welcome to letsdoit</h3>")
-
+def library(request):
+      title = 'library'
+      context = {'title':title}
+      return render(request, 'library.html',context)
 def Course(request):
     return HttpResponse("<h4>Following Course are available</h4>")
 
 def courseId(request, cid):
     return HttpResponse(cid)
+def login(request):
+    title = 'login'
+    context = {'title':title}
+    return render(request,'login.html')
