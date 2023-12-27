@@ -21,11 +21,11 @@ from letsdoit import views
 urlpatterns = [
     path('admin/',admin.site.urls),
     #there is empty because home page should display at 8000(any port) direclty
-    path('',views.homePage),
-    path('home/',views.homePage,name="home"),
+    
+    path('',views.homePage,name="home"),
     path('library/',views.library, name="library"),
-    path('course/',views.Course),
     path('login/',views.login, name= "login"),
+     path('contact/',views.contact, name= "contact"),
     # dynamic routes/urls
     # urls type : int, str and slug ->like(bijay-dulal-sudal)
 #    path('course/<int:cid>',views.courseId),

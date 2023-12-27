@@ -29,4 +29,9 @@ def courseId(request, cid):
 def login(request):
     title = 'login'
     context = {'title':title}
-    return render(request,'login.html')
+    return render(request,'login.html',context)
+
+def contact(request):
+    title = 'contact'
+    context = {'title':title}
+    return render(request,'contact.html',context)
