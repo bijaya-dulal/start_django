@@ -22,8 +22,8 @@ urlpatterns = [
     path('admin/',admin.site.urls),
     #there is empty because home page should display at 8000(any port) direclty
     
-    path('',views.homePage,name="home"),
-    path('library/',views.library, name="library"),
+    path('',views.homePage,name= "home"),
+    path('library/',views.library, name= "library"),
     path('login/',views.login, name= "login"),
      path('contact/',views.contact, name= "contact"),
     # dynamic routes/urls
@@ -32,5 +32,4 @@ urlpatterns = [
 #    path('course/<str:cid>',views.courseId),
 #    path('course/<slug:cid>',views.courseId),
      #this is for all typed dynamic
-    path('course/<cid>',views.courseId),
 ]

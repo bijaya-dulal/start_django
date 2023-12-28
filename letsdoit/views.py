@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render 
 
 # def homePage(request):
@@ -38,7 +38,9 @@ def contact(request):
             address = request.POST['address']
             email = request.POST['email']
             phone= request.POST.get('phone')#this is using get() method call
-            print(name)
+            url = "/login/?name={}& address={}".format(name,address)
+            return HttpResponseRedirect(url)
+            #return redirect(url) # for this import redirect from django.shortcut
     except:
         pass
     title = 'contact'
