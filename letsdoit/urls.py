@@ -25,7 +25,8 @@ urlpatterns = [
     path('',views.homePage,name= "home"),
     path('library/',views.library, name= "library"),
     path('login/',views.login, name= "login"),
-     path('contact/',views.contact, name= "contact"),
+    path('contact/',views.contact, name= "contact"),
+      path('thankyou/',views.thankyou, name= "submit_contact"),
     # dynamic routes/urls
     # urls type : int, str and slug ->like(bijay-dulal-sudal)
 #    path('course/<int:cid>',views.courseId),

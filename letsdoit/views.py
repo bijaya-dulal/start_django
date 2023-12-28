@@ -46,3 +46,16 @@ def contact(request):
     title = 'contact'
     context = {'title':title}
     return render(request,'contact.html',context)
+
+def thankyou(request):
+    try:
+        if(request.method =="POST"):
+            name = request.POST['name']
+            address = request.POST['address']
+            email = request.POST['email']
+            phone= request.POST.get('phone')#this is using get() method call
+            url = "/login/?name={}& address={}".format(name,address)
+            return HttpResponse(request)
+            #return redirect(url) # for this import redirect from django.shortcut
+    except:
+        pass

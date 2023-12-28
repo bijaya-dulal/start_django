@@ -3,7 +3,7 @@
 {% block content%}
 
 
-<form action="#" method="post">
+<form action="{% url 'submit_contact' %}" method="post">
     {% csrf_token %}
     <!-- Name Input -->
     <label for="name">Name:</label>

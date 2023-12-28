@@ -17,10 +17,10 @@
 
         <div class="nav-sec"> 
             <div class="nav-link">
-                <div class="Abc {% if request.path == '/' %} active {% endif %}" ><a href="{% url 'home' %}">Home</a></div>
-                <div class="Abc {% if request.path == '/library/' %} active {% endif %}"><a href="{% url 'library'%}">Library</a></div>
-                <div  class="Abc {% if request.path == '/login/' %} active {% endif %}"><a href="{% url 'login'%}">Log In</a></div>
-                <div  class="Abc {% if request.path == '/contact/' %} active {% endif %}"><a href="{% url 'contact'%}">Contact US</a></div>
+                <div class="Abc {% if request.path == '' %} active {% endif %}" ><a href="{% url 'home' %}">Home</a></div>
+                <div class="Abc {% if request.path == 'library/' %} active {% endif %}"><a href="{% url 'library'%}">Library</a></div>
+                <div  class="Abc {% if request.path == 'login/' %} active {% endif %}"><a href="{% url 'login'%}">Log In</a></div>
+                <div  class="Abc {% if request.path == 'contact/' %} active {% endif %}"><a href="{% url 'contact'%}">Contact US</a></div>
             </div>
             
         </div>
