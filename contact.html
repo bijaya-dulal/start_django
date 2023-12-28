@@ -1,7 +1,33 @@
 {% extends "base.html"%}
 
 {% block content%}
-<h2>this is contact us</h2>
+
+
+<form action="#" method="get">
+    <!-- Name Input -->
+    <label for="name">Name:</label>
+    <input class="input-field" type="text" id="name" name="name" required>
+    <br>
+
+    <!-- Address Input -->
+    <label for="address">Address:</label>
+    <input class="input-field" type="text" id="address" name="address" required>
+    <br>
+
+    <!-- Email Input -->
+    <label for="email">Email:</label>
+    <input class="input-field" type="email" id="email" name="email" required>
+    <br>
+
+    <!-- Phone Number Input -->
+    <label for="phone">Phone Number:</label>
+    <input class="input-field" type="tel" id="phone" name="phone" required>
+    <br>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+</form>
+
 
 {% endblock %}
 

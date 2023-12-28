@@ -32,6 +32,13 @@ def login(request):
     return render(request,'login.html',context)
 
 def contact(request):
+    try:
+        name = request.GET['name']
+        address = request.GET['address']
+        email = request.GET['email']
+        phone= request.GET['phone']
+    except:
+        pass
     title = 'contact'
     context = {'title':title}
     return render(request,'contact.html',context)

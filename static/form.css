@@ -1,0 +1,35 @@
+/* styles.css */
+
+h2 {
+    color: #333;
+}
+
+form {
+
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top:15%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-field{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+
+}
