@@ -33,10 +33,12 @@ def login(request):
 
 def contact(request):
     try:
-        name = request.GET['name']
-        address = request.GET['address']
-        email = request.GET['email']
-        phone= request.GET['phone']
+        if(request.method =="POST"):
+            name = request.POST['name']
+            address = request.POST['address']
+            email = request.POST['email']
+            phone= request.POST.get('phone')#this is using get() method call
+            print(name)
     except:
         pass
     title = 'contact'

@@ -3,7 +3,8 @@
 {% block content%}
 
 
-<form action="#" method="get">
+<form action="#" method="post">
+    {% csrf_token %}
     <!-- Name Input -->
     <label for="name">Name:</label>
     <input class="input-field" type="text" id="name" name="name" required>
