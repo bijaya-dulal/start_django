@@ -26,11 +26,11 @@ urlpatterns = [
     path('library/',views.library, name= "library"),
     path('login/',views.login, name= "login"),
     path('contact/',views.contact, name= "contact"),
-      path('thankyou/',views.thankyou, name= "submit_contact"),
+      path('thankyou/',views.thankyou, name= "submit_contactgi"),
     # dynamic routes/urls
     # urls type : int, str and slug ->like(bijay-dulal-sudal)
-#    path('course/<int:cid>',views.courseId),
-#    path('course/<str:cid>',views.courseId),
-#    path('course/<slug:cid>',views.courseId),
-     #this is for all typed dynamic
+    #path('course/<int:cid>',views.courseId),
+    #path('course/<str:cid>',views.courseId),
+    #path('course/<slug:cid>',views.courseId),
+    #this is for all typed dynamic
 ]
