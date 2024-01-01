@@ -54,8 +54,13 @@ def thankyou(request):
             address = request.POST['address']
             email = request.POST['email']
             phone= request.POST.get('phone')#this is using get() method call
-            url = "/login/?name={}& address={}".format(name,address)
-            return HttpResponse(request)
-            #return redirect(url) # for this import redirect from django.shortcut
+            context={'name':name, 
+                     'address':address,
+                     'title':"thankyou",
+                     'email':email,
+                     'phone':phone,
+                     }
+            return render(request,'thankyou.html',context)
+           
     except:
         pass
