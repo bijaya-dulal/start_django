@@ -33,3 +33,9 @@ button {
     padding: 10px;
 
 }
+
+.note{
+    background-color: rgb(68, 50, 50);
+    color: rgb(194, 177, 177);
+    size:2ev;
+}
