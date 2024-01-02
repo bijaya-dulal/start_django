@@ -68,3 +68,26 @@ def thankyou(request):
            
     except:
         pass
+
+def calculator(request):
+    c = ''
+    try:
+        if(request.method == "POST"):
+            c = 'in'
+            num1 = eval(request.POST['num1'])
+            num2 = eval(request.POST['num2'])
+            opr = request.POST['opr']
+            if(opr == "+"):
+                 c = num1+num2
+            elif(opr == "-"):
+                 c = num1-num2
+            elif(opr == "*"):
+                 c = num1*num2  
+            elif(opr == "/"):
+                 c = num1/num2   
+                 
+    except:
+        c = "invalid expression"
+    print(c)    
+    data = {'result':c}
+    return render(request,'calculator.html',data)

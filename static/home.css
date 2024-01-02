@@ -103,8 +103,8 @@ body {
     transition-duration: 1s;
     background-color: rgb(243, 168, 7);
   }
-.active {
-  background-color: red !important;
+.active a {
+  background-color: red;
 
 }
 
