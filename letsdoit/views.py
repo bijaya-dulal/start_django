@@ -1,12 +1,18 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render 
 from .forms import usersForm
+from login.models import Login
 
 # def homePage(request):
 #     return render(request,"index.html")
 
 
 def homePage(request):
+    logindata = Login.objects.all()
+    for a in logindata:
+        print(a.name)
+        print('here')
+
     data = {
         'title':'home Page',
         'bdata':'bijaya dulal',
