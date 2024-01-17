@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content%}
-<form action="#" method="get">
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <p style="background-color: brown;">{{error}}</p>
     <label for="username">Username:</label>
     <input  class="input-field" type="text" id="username" name="username" required>
 

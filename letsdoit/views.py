@@ -1,18 +1,17 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render 
-from .forms import usersForm
-from login.models import Login
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
+
+import re
 
 # def homePage(request):
 #     return render(request,"index.html")
 
-
+@login_required(login_url='login')
 def homePage(request):
-    logindata = Login.objects.all()
-    for a in logindata:
-        print(a.name)
-        print('here')
-
+ 
+  
     data = {
         'title':'home Page',
         'bdata':'bijaya dulal',
@@ -23,20 +22,41 @@ def homePage(request):
                           ]
     }
     return render(request,"index.html",data)
-
+@login_required(login_url='login')
 def library(request):
       title = 'library'
       context = {'title':title}
       return render(request, 'library.html',context)
 
-def login(request):
-  
-    title = 'login'
-    context = {'title':title}
-    return render(request,'login.html',context)
+def login_user(request):
+    if request.method == 'POST':
+        # Get the username and password from the POST request
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
+        # Use Django's authenticate function to check the credentials
+        user = authenticate(request, username=username, password=password)
+
+        # If the user is authenticated, log them in
+        if user is not None:
+            login(request,user)
+            # Redirect to a success page or homepage
+            return render(request,'index.html')
+        else:
+            # If authentication fails, you can handle it accordingly
+            return render(request, 'login.html', {'error': 'Invalid credentials'})
+
+    # If it's a GET request, render the login form
+    return render(request, 'login.html')
+
+
+def logout_user(request):
+    logout(request)
+    return render(request,'login.html')
+
+@login_required(login_url='login')
 def contact(request):
-    fm = usersForm();
+   # fm = usersForm();
     try:
         if(request.method =="POST"):
             name = request.POST['name']
@@ -53,7 +73,7 @@ def contact(request):
     
 
     context = {'title':title,
-               'form':fm,
+              # 'form':fm,
                }
     return render(request,'contact.html',context)
 

@@ -23,8 +23,10 @@ urlpatterns = [
     #there is empty because home page should display at 8000(any port) direclty
     
     path('',views.homePage,name= "home"),
+      
+    path('logout_user',views.logout_user,name= "logout_user"),
     path('library/',views.library, name= "library"),
-    path('login/',views.login, name= "login"),
+    path('login/',views.login_user, name= "login"),
     path('contact/',views.contact, name= "contact"),
     path('thankyou/',views.thankyou, name= "submit_contact"),
     path('calculator/',views.calculator, name= "calculator"),
