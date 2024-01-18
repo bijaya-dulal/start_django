@@ -10,8 +10,6 @@ import re
 
 @login_required(login_url='login')
 def homePage(request):
- 
-  
     data = {
         'title':'home Page',
         'bdata':'bijaya dulal',
@@ -29,22 +27,25 @@ def library(request):
       return render(request, 'library.html',context)
 
 def login_user(request):
-    if request.method == 'POST':
-        # Get the username and password from the POST request
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+    if request.user.is_authenticated:
+        return render(request,'index.html')
+    else:
+        if request.method == 'POST':
+            # Get the username and password from the POST request
+            username = request.POST.get('username')
+            password = request.POST.get('password')
 
-        # Use Django's authenticate function to check the credentials
-        user = authenticate(request, username=username, password=password)
+            # Use Django's authenticate function to check the credentials
+            user = authenticate(request, username=username, password=password)
 
-        # If the user is authenticated, log them in
-        if user is not None:
-            login(request,user)
-            # Redirect to a success page or homepage
-            return render(request,'index.html')
-        else:
-            # If authentication fails, you can handle it accordingly
-            return render(request, 'login.html', {'error': 'Invalid credentials'})
+            # If the user is authenticated, log them in
+            if user is not None:
+                login(request,user)
+                # Redirect to a success page or homepage
+                return render(request,'index.html')
+            else:
+                # If authentication fails, you can handle it accordingly
+                return render(request, 'login.html', {'error': 'Invalid credentials'})
 
     # If it's a GET request, render the login form
     return render(request, 'login.html')
